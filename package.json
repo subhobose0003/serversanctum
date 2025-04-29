@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.0.0",
   "private": true,
-  "homepage": "https://subhobose0003.github.io/serversanctum",
+  "homepage": "https://serversanctum.in",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
