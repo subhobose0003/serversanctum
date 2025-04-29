@@ -153,6 +153,7 @@ const addTransformIndexHtml = {
 console.warn = () => {};
 
 export default defineConfig({
+	base: '/serversanctum/',
 	plugins: [react(), addTransformIndexHtml],
 	server: {
 		cors: true,

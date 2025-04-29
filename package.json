@@ -3,10 +3,12 @@
   "type": "module",
   "version": "0.0.0",
   "private": true,
+  "homepage": "https://subhobose0003.github.io/serversanctum",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "postbuild": "cp dist/index.html dist/404.html"
   },
   "dependencies": {
     "@radix-ui/react-alert-dialog": "^1.0.5",
