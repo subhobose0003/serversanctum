@@ -33,7 +33,7 @@ const Contact = () => {
               className="space-y-6"
             >
               <h2 className="text-2xl font-bold">Contact Form</h2>
-              <form className="space-y-4" action="https://formspree.io/f/xovdjweegett" method="POST">
+              <form className="space-y-4" action="https://formspree.io/f/xovdjwee" method="POST">
                 <div>
                   <label className="block text-sm font-medium mb-2">Name</label>
                   <input
