@@ -1,5 +1,6 @@
 import React from 'react';
 import blogs from '../utils/loadBlogs';
+import { Link } from "react-router-dom";
 
 export default function BlogsPage() {
   return (
@@ -7,7 +8,7 @@ export default function BlogsPage() {
       <h1 className="mb-8 text-3xl font-bold text-center">All Blogs</h1>
       <div className="blog-grid grid gap-8 md:grid-cols-2 lg:grid-cols-3">
         {blogs.map(blog => (
-          <article key={blog.slug} className="post-card group">
+          <Link to={`/blog/${blog.slug}`} key={blog.slug} className="post-card group" aria-label={`Read more: ${blog.title}`}>
             <div className="overflow-hidden">
               <img
                 alt={`Blog post about ${blog.title}`}
@@ -16,8 +17,8 @@ export default function BlogsPage() {
               />
             </div>
             <div className="post-content">
-              <div className="mb-2 flex gap-2">
-                {(blog.tags || []).map((tag) => (
+              <div className="mb-2 flex flex-wrap gap-2">
+                {blog.tags && blog.tags.map(tag => (
                   <span key={tag} className="tag">{tag}</span>
                 ))}
               </div>
@@ -28,7 +29,7 @@ export default function BlogsPage() {
                 <span className="text-muted-foreground">{blog.date}</span>
               </div>
             </div>
-          </article>
+          </Link>
         ))}
       </div>
     </div>

@@ -1,5 +1,6 @@
 import React from 'react';
 import blogs from '../utils/loadBlogs';
+import { Link } from "react-router-dom";
 
 export default function FeaturedBlogs() {
   const latest = blogs.slice(0, 4);
@@ -13,6 +14,7 @@ export default function FeaturedBlogs() {
             key={blog.slug}
             className="post-card group"
           >
+            <Link to={`/blog/${blog.slug}`} className="absolute inset-0 z-10" aria-label={`Read more: ${blog.title}`}></Link>
             <div className="overflow-hidden">
               <img
                 alt={`Post about ${blog.title}`}
@@ -21,8 +23,8 @@ export default function FeaturedBlogs() {
               />
             </div>
             <div className="post-content">
-              <div className="mb-2 flex gap-2">
-                {(blog.tags || []).map((tag) => (
+              <div className="mb-2 flex flex-wrap gap-2">
+                {blog.tags && blog.tags.map(tag => (
                   <span key={tag} className="tag">{tag}</span>
                 ))}
               </div>
