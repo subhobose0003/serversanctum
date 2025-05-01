@@ -1,4 +1,4 @@
-# Horizons Export
+# Server Sanctum
 
 This project is a static site I built with Vite and Tailwind CSS. I can deploy it to GitHub Pages or any static hosting provider.
 
