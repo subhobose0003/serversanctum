@@ -17,8 +17,11 @@ const Navbar = () => {
       <div className="container flex h-16 items-center justify-between">
         <div className="flex items-center gap-6">
           <Link to="/" className="flex items-center space-x-2">
-            <img src="/terminal-logo.png" alt="Server Sanctum Logo" className="h-8 w-8 rounded bg-primary p-1" />
-            <span className="font-semibold hidden sm:inline-block">Server Sanctum</span>
+            <picture>
+              <source srcSet="/terminal-logo.webp" type="image/webp" />
+              <img src="/terminal-logo.png" alt="Server Sanctum Logo" className="h-8 w-8 rounded bg-primary p-1" loading="lazy" />
+            </picture>
+            <span className="font-bold text-xl tracking-tight">Server Sanctum</span>
           </Link>
           <nav className="hidden md:flex items-center space-x-6 text-sm font-medium">
             <Link to="/" className={`transition-colors hover:text-primary ${isActive("/")}`}>
