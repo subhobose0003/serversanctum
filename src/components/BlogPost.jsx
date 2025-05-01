@@ -30,7 +30,7 @@ export default function BlogPost() {
       {blog.image && (
         <img src={blog.image} alt={blog.title} className="w-full rounded-lg mb-6" />
       )}
-      <div className="prose prose-lg max-w-none">
+      <div className="prose prose-lg max-w-none dark:prose-invert">
         <ReactMarkdown>{blog.content}</ReactMarkdown>
       </div>
       {blog.tags && (
