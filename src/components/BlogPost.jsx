@@ -28,7 +28,10 @@ export default function BlogPost() {
         {blog.category && <><span>•</span><span>{blog.category}</span></>}
       </div>
       {blog.image && (
-        <img src={blog.image} alt={blog.title} className="w-full rounded-lg mb-6" />
+        <picture>
+          <source srcSet={blog.image.replace(/\.(png|jpg|jpeg)$/i, '.webp')} type="image/webp" />
+          <img src={blog.image} alt={blog.title} className="w-full rounded-lg mb-6" loading="lazy" />
+        </picture>
       )}
       <div className="prose prose-lg max-w-none dark:prose-invert">
         <ReactMarkdown>{blog.content}</ReactMarkdown>

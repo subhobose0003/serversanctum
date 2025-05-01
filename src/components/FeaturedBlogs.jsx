@@ -16,11 +16,15 @@ export default function FeaturedBlogs() {
           >
             <Link to={`/blog/${blog.slug}`} className="absolute inset-0 z-10" aria-label={`Read more: ${blog.title}`}></Link>
             <div className="overflow-hidden">
-              <img
-                alt={`Post about ${blog.title}`}
-                className="post-image transition-transform duration-300 group-hover:scale-105"
-                src={blog.image || "https://images.unsplash.com/photo-1504983875-d3b163aba9e6"}
-              />
+              <picture>
+                <source srcSet={blog.image.replace(/\.(png|jpg|jpeg)$/i, '.webp')} type="image/webp" />
+                <img
+                  alt={`Post about ${blog.title}`}
+                  className="post-image transition-transform duration-300 group-hover:scale-105"
+                  src={blog.image || "https://images.unsplash.com/photo-1504983875-d3b163aba9e6"}
+                  loading="lazy"
+                />
+              </picture>
             </div>
             <div className="post-content">
               <div className="mb-2 flex flex-wrap gap-2">

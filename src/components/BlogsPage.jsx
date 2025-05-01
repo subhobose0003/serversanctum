@@ -10,11 +10,15 @@ export default function BlogsPage() {
         {blogs.map(blog => (
           <Link to={`/blog/${blog.slug}`} key={blog.slug} className="post-card group" aria-label={`Read more: ${blog.title}`}>
             <div className="overflow-hidden">
-              <img
-                alt={`Blog post about ${blog.title}`}
-                className="post-image transition-transform duration-300 group-hover:scale-105"
-                src={blog.image || "https://images.unsplash.com/photo-1504983875-d3b163aba9e6"}
-              />
+              <picture>
+                <source srcSet={(blog.image || "https://images.unsplash.com/photo-1504983875-d3b163aba9e6").replace(/\.(png|jpg|jpeg)$/i, '.webp')} type="image/webp" />
+                <img
+                  alt={`Blog post about ${blog.title}`}
+                  className="post-image transition-transform duration-300 group-hover:scale-105"
+                  src={blog.image || "https://images.unsplash.com/photo-1504983875-d3b163aba9e6"}
+                  loading="lazy"
+                />
+              </picture>
             </div>
             <div className="post-content">
               <div className="mb-2 flex flex-wrap gap-2">
