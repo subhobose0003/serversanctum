@@ -27,16 +27,16 @@ export default function FeaturedBlogs() {
               </picture>
             </div>
             <div className="post-content">
-              <div className="mb-2 flex flex-wrap gap-2">
+              <h3 className="mb-2 text-xl font-semibold">{blog.title}</h3>
+              <p className="mb-4 text-muted-foreground">{blog.summary}</p>
+              <div className="flex items-center justify-between text-sm mb-2">
+                <span className="text-primary">{blog.category}</span>
+                <span className="text-muted-foreground">{blog.date}</span>
+              </div>
+              <div className="flex flex-wrap gap-2">
                 {blog.tags && blog.tags.map(tag => (
                   <span key={tag} className="tag">{tag}</span>
                 ))}
-              </div>
-              <h3 className="mb-2 text-xl font-semibold">{blog.title}</h3>
-              <p className="mb-4 text-muted-foreground">{blog.summary}</p>
-              <div className="flex items-center justify-between text-sm">
-                <span className="text-primary">{blog.category}</span>
-                <span className="text-muted-foreground">{blog.date}</span>
               </div>
             </div>
           </article>
